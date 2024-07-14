@@ -17,13 +17,13 @@ class Doctor
     private ?int $id = null;
 
     #[ORM\Column(length: 30)]
-    private ?string $first_name = null;
+    private ?string $firstName = null;
 
     #[ORM\Column(length: 30)]
-    private ?string $last_name = null;
+    private ?string $lastName = null;
 
     #[ORM\Column(length: 60)]
-    private ?string $middle_name = null;
+    private ?string $middleName = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $birthday = null;
@@ -35,43 +35,43 @@ class Doctor
 
     public function getFirstName(): ?string
     {
-        return $this->first_name;
+        return $this->firstName;
     }
 
-    public function setFirstName(string $first_name): static
+    public function setFirstName(string $firstName): static
     {
-        $this->first_name = $first_name;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
     public function getLastName(): ?string
     {
-        return $this->last_name;
+        return $this->lastName;
     }
 
-    public function setLastName(string $last_name): static
+    public function setLastName(string $lastName): static
     {
-        $this->last_name = $last_name;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
     public function getMiddleName(): ?string
     {
-        return $this->middle_name;
+        return $this->middleName;
     }
 
-    public function setMiddleName(string $middle_name): static
+    public function setMiddleName(string $middleName): static
     {
-        $this->middle_name = $middle_name;
+        $this->middleName = $middleName;
 
         return $this;
     }
 
-    public function getBirthday(): ?\DateTimeInterface
+    public function getBirthday(): ?string
     {
-        return $this->birthday;
+        return $this->birthday->format('Y-m-d');
     }
 
     public function setBirthday(\DateTimeInterface $birthday): static
